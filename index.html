@@ -14,6 +14,7 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="img/logosinfondo.png"> 
 </head>
 <body>
 
@@ -30,20 +31,26 @@
         <p>Educación por y para todos</p>
       </div>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#nosotros">Sobre nosotros</a></li>
-          <li><a href="#objetivos">Objetivos</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#metodologia">Metodología</a></li>
-          <li><a href="#publico">Público</a></li>
-          <li><a href="#programas">Programas</a></li>
-          <li><a href="#equipo">Equipo docente</a></li>
-          <li><a href="#experiencias">Experiencias</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
+      <button class="menu-toggle" id="menuToggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+ <nav class="nav">
+  <ul class="nav-list" id="navList">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Sobre nosotros</a></li>
+    <li><a href="#objetivos">Objetivos</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#metodologia">Metodología</a></li>
+    <li><a href="#publico">Público</a></li>
+    <li><a href="#programas">Programas</a></li>
+    <li><a href="#equipo">Equipo docente</a></li>
+    <li><a href="#experiencias">Experiencias</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+ </nav>
     </div>
   </header>
 
@@ -465,7 +472,7 @@
             <p><strong>Horario:</strong> Lunes a viernes, de 9:00 a. m. a 10:00 p. m.</p>
           </article>
 
-          <article class="card">
+          <article class="card">git push origin main
             <h3>Formulario de contacto</h3>
             <form id="contactForm" onsubmit="handleSubmit(event)">
               <label for="nombre">Nombre</label>
@@ -558,6 +565,19 @@
       
       // Limpiar formulario
       document.getElementById('contactForm').reset();
+    }
+  </script>
+
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/message/WLGV2CBEJZI7O1" class="whatsapp-btn" target="_blank" title="Chatear con EDUCAOS por WhatsApp">
+    💬
+  </a>
+
+  <!-- Script para formulario -->
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      ...
     }
   </script>
 
