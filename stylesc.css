@@ -155,7 +155,7 @@ a:hover {
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 200;
 }
 
 .header-container {
@@ -170,8 +170,9 @@ a:hover {
   flex-shrink: 0;
 }
 
-.logo-box img {
-  height: auto;
+.logo-img {
+  height: 50px;
+  width: auto;
   display: block;
 }
 
@@ -192,64 +193,75 @@ a:hover {
   font-weight: 500;
 }
 
+/* NAVEGACIÓN */
+.nav {
+  display: flex;
+}
+
 .nav-list {
   display: flex;
   list-style: none;
   gap: var(--spacing-lg);
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: center;
 }
 
 .nav-list li a {
   color: var(--color-dark);
   font-weight: 500;
   transition: var(--transition);
+  padding: 0.5rem 0;
 }
 
 .nav-list li a:hover {
   color: var(--color-secondary);
   text-decoration: none;
+  border-bottom: 2px solid var(--color-secondary);
 }
 
-/* MENÚ HAMBURGUESA */
-.menu-toggle {
+/* ===================================
+   MENÚ HAMBURGUESA
+   =================================== */
+
+.hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
-  gap: 6px;
   background: none;
   border: none;
+  cursor: pointer;
   padding: 0;
+  width: 30px;
+  height: 24px;
+  gap: 6px;
+  z-index: 250;
 }
 
-.menu-toggle span {
-  width: 25px;
+.hamburger .line {
+  width: 100%;
   height: 3px;
   background-color: var(--color-primary);
   border-radius: 2px;
   transition: var(--transition);
+  transform-origin: center;
 }
 
-.menu-toggle.active span:nth-child(1) {
+/* Hamburguesa activa (abierta) */
+.hamburger.active .line1 {
   transform: rotate(45deg) translate(10px, 10px);
 }
 
-.menu-toggle.active span:nth-child(2) {
+.hamburger.active .line2 {
   opacity: 0;
 }
 
-.menu-toggle.active span:nth-child(3) {
+.hamburger.active .line3 {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+/* RESPONSIVE - TABLET Y MOBILE */
 @media (max-width: 768px) {
-  .header-container {
-    flex-direction: row;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) 0;
-  }
-
-  .menu-toggle {
+  .hamburger {
     display: flex;
   }
 
@@ -257,29 +269,35 @@ a:hover {
     flex-grow: 0;
   }
 
-  .nav-list {
-    position: absolute;
+  .brand-box h1 {
+    font-size: var(--font-size-xl);
+  }
+
+  .nav {
+    position: fixed;
     top: 70px;
     left: 0;
     right: 0;
     background-color: var(--color-white);
-    flex-direction: column;
-    gap: 0;
-    justify-content: flex-start;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.4s ease;
+    z-index: 199;
     box-shadow: var(--shadow-md);
-    padding: 0;
   }
 
-  .nav-list.active {
+  .nav.active {
     max-height: 500px;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 0;
     padding: var(--spacing-md) 0;
   }
 
   .nav-list li {
-    padding: var(--spacing-sm) var(--spacing-lg);
+    width: 100%;
     border-bottom: 1px solid var(--color-border);
   }
 
@@ -289,49 +307,120 @@ a:hover {
 
   .nav-list li a {
     display: block;
+    padding: var(--spacing-sm) var(--spacing-lg);
   }
 
-  .brand-box h1 {
-    font-size: var(--font-size-xl);
+  .nav-list li a:hover {
+    background-color: var(--color-light);
+    border-bottom: none;
+  }
+
+  .header-container {
+    flex-direction: row;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0;
+  }
+
+  .logo-img {
+    height: 40px;
   }
 }
 
 @media (max-width: 480px) {
-  .nav-list.active {
+  .nav.active {
     max-height: 400px;
   }
 
-  .nav-list li {
+  .nav-list li a {
     padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
   }
 }
 
 /* ===================================
-   SECCIÓN HERO
+   ANIMACIONES FADE-IN
+   =================================== */
+
+.fade-in,
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in {
+  animation: fadeInImmediate 0.8s ease-out forwards;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInImmediate {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   SECCIÓN HERO CON PARALLAX
    =================================== */
 
 .hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  position: relative;
   color: var(--color-white);
   padding: var(--spacing-2xl) 0;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.4);
+  z-index: -1;
 }
 
 .hero-container {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
   align-items: center;
+  z-index: 1;
+}
+
+.hero-text {
+  z-index: 2;
 }
 
 .hero-text h2 {
   color: var(--color-white);
   font-size: var(--font-size-3xl);
   text-align: left;
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-text p {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-buttons {
@@ -341,14 +430,24 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.hero-image {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-image img {
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-lg);
+  opacity: 0.95;
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
   }
@@ -363,6 +462,10 @@ a:hover {
 
   .btn {
     width: 100%;
+  }
+
+  .parallax-bg {
+    background-attachment: scroll;
   }
 }
 
@@ -403,21 +506,23 @@ a:hover {
 .methodology-list {
   list-style: none;
   margin-top: var(--spacing-md);
+  padding-left: var(--spacing-lg);
 }
 
 .methodology-list li {
   padding: var(--spacing-sm) 0;
-  padding-left: var(--spacing-lg);
   position: relative;
   color: var(--color-gray);
+  margin-left: var(--spacing-lg);
 }
 
 .methodology-list li:before {
   content: "✓";
   position: absolute;
-  left: 0;
+  left: -var(--spacing-lg);
   color: var(--color-accent);
   font-weight: bold;
+  font-size: 1.2em;
 }
 
 /* ===================================
@@ -472,12 +577,12 @@ a:hover {
 }
 
 .content-card {
-  background: #f0f9ff;           /* ← Azul muy claro */
+  background: #f0f9ff;
   padding: 25px;
   border-radius: 5px;
   border-left: 4px solid #3b82f6;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: #1e3a8a;                /* ← Texto azul oscuro */
+  color: #1e3a8a;
 }
 
 .grid-two {
@@ -597,10 +702,10 @@ form button:hover {
 }
 
 .section-image img {
-  max-width: 60%;        /* ← Cambiar este valor (60%, 50%, 40% según quieras) */
+  max-width: 60%;
   height: auto;
   border-radius: 5px;
-  margin: 0 auto;        /* ← Agregar esta línea para centrar */
+  margin: 0 auto;
 }
 
 /* ===================================
@@ -672,6 +777,56 @@ form button:hover {
 }
 
 /* ===================================
+   BOTÓN WHATSAPP FLOTANTE
+   =================================== */
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  z-index: 99;
+  text-decoration: none;
+  animation: slideIn 0.5s ease-out;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 28px;
+  }
+}
+
+/* ===================================
    UTILIDADES
    =================================== */
 
@@ -734,11 +889,6 @@ form button:hover {
     padding: 0 var(--spacing-md);
   }
 
-  .nav-list {
-    gap: var(--spacing-xs);
-    font-size: 13px;
-  }
-
   h1 {
     font-size: var(--font-size-xl);
   }
@@ -758,55 +908,5 @@ form button:hover {
 
   .grid-two {
     grid-template-columns: 1fr;
-  }
-}
-
-/* ===================================
-   BOTÓN WHATSAPP FLOTANTE
-   =================================== */
-
-.whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: var(--transition);
-  z-index: 99;
-  text-decoration: none;
-  animation: slideIn 0.5s ease-out;
-}
-
-.whatsapp-btn:hover {
-  background-color: #20ba5a;
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@media (max-width: 768px) {
-  .whatsapp-btn {
-    width: 55px;
-    height: 55px;
-    bottom: 20px;
-    right: 20px;
-    font-size: 28px;
   }
 }

@@ -7,66 +7,73 @@
   <title>EDUCAOS | Educación por y para todos</title>
   <meta
     name="description"
-    content="EDUCAOS es una academia de clases personalizadas en ciencias naturales, matemáticas e inglés para estudiantes de primaria, bachillerato y primeros semestres de universidad."
+    content="EDUCAOS es una academia de clases personalizadas en Física, Química, Matemáticas, Inglés, Ciencias en Inglés, Análisis y Lógica Matemática"
   />
   <meta name="keywords" content="educación, clases personalizadas, matemáticas, ciencias, inglés, Bogotá" />
   <meta name="author" content="EDUCAOS" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
+  <!-- FAVICON - Logo en la pestaña -->
   <link rel="icon" type="image/png" href="img/logosinfondo.png"> 
 </head>
 <body>
 
-  <!-- ENCABEZADO -->
+  <!-- ENCABEZADO / HEADER -->
   <header class="header">
     <div class="container header-container">
       
+      <!-- LOGO -->
       <div class="logo-box">
-        <img src="img/logosinfondo.png" alt="Logo EDUCAOS" style="width:200px;">
+        <img src="img/logosinfondo.png" alt="Logo EDUCAOS" class="logo-img">
       </div>
 
+      <!-- MARCA / NOMBRE -->
       <div class="brand-box">
         <h1>EDUCAOS</h1>
         <p>Educación por y para todos</p>
       </div>
 
-      <button class="menu-toggle" id="menuToggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+      <!-- BOTÓN MENÚ HAMBURGUESA -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </button>
 
- <nav class="nav">
-  <ul class="nav-list" id="navList">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#nosotros">Sobre nosotros</a></li>
-    <li><a href="#objetivos">Objetivos</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#metodologia">Metodología</a></li>
-    <li><a href="#publico">Público</a></li>
-    <li><a href="#programas">Programas</a></li>
-    <li><a href="#equipo">Equipo docente</a></li>
-    <li><a href="#experiencias">Experiencias</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
- </nav>
+      <!-- NAVEGACIÓN -->
+      <nav class="nav" id="nav">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Sobre nosotros</a></li>
+          <li><a href="#objetivos">Objetivos</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#metodologia">Metodología</a></li>
+          <li><a href="#publico">Público</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#equipo">Equipo docente</a></li>
+          <li><a href="#experiencias">Experiencias</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
     </div>
   </header>
 
   <main>
 
-    <!-- INICIO -->
-    <section id="inicio" class="hero">
+    <!-- SECCIÓN HERO CON PARALLAX -->
+    <section id="inicio" class="hero" data-parallax="yes">
+      <div class="parallax-bg" style="background-image: url('img/portada.jpg');"></div>
       <div class="container hero-container">
         
-        <div class="hero-text">
+        <div class="hero-text fade-in">
           <h2>Clases personalizadas para aprender con sentido</h2>
           <p>
             Acompañamos a estudiantes de primaria, bachillerato y primeros semestres
-            de universidad mediante clases personalizadas en ciencias naturales (física, química, biología),
-            matemáticas e idiomas (inglés, español), con estrategias claras, dinámicas y adaptadas
-            a su ritmo de aprendizaje.
+            de universidad mediante clases personalizadas en <strong>Física, Química, Matemáticas, 
+            Inglés, Ciencias en Inglés, Análisis y Lógica Matemática</strong>, con estrategias claras, 
+            dinámicas y adaptadas a su ritmo de aprendizaje.
           </p>
 
           <p>
@@ -82,7 +89,7 @@
           </div>
         </div>
 
-        <div class="hero-image">
+        <div class="hero-image fade-in">
           <img src="img/portada.jpg" alt="Estudiantes aprendiendo con EDUCAOS" />
         </div>
 
@@ -92,9 +99,9 @@
     <!-- SOBRE NOSOTROS -->
     <section id="nosotros" class="section">
       <div class="container">
-        <h2>Sobre nosotros</h2>
+        <h2 class="fade-in-on-scroll">Sobre nosotros</h2>
 
-        <article class="content-block">
+        <article class="content-block fade-in-on-scroll">
           <h3>¿Quiénes somos?</h3>
           <p>
             Somos un equipo de docentes apasionados por la educación y la enseñanza
@@ -114,7 +121,7 @@
           </p>
         </article>
 
-        <article class="content-block">
+        <article class="content-block fade-in-on-scroll">
           <h3>Nuestro enfoque</h3>
           <p>
             En EDUCAOS trabajamos desde un enfoque humanista y productivo, apoyado
@@ -130,7 +137,7 @@
           </p>
         </article>
 
-        <article class="content-block">
+        <article class="content-block fade-in-on-scroll">
           <h3>¿Por qué nace EDUCAOS?</h3>
           <p>
             EDUCAOS surge como una respuesta a las dificultades educativas actuales,
@@ -153,7 +160,7 @@
         </article>
 
         <div class="grid-two">
-          <article class="content-card">
+          <article class="content-card fade-in-on-scroll">
             <h3>Misión</h3>
             <p>
               En EDUCAOS, nuestra misión es trascender los límites convencionales
@@ -170,7 +177,7 @@
             </p>
           </article>
 
-          <article class="content-card">
+          <article class="content-card fade-in-on-scroll">
             <h3>Visión</h3>
             <p>
               Nos visualizamos como un proyecto educativo referente en la transformación
@@ -192,7 +199,7 @@
           </article>
         </div>
 
-        <div class="section-image">
+        <div class="section-image fade-in-on-scroll">
           <img src="img/teachers.png" alt="Equipo docente de EDUCAOS" />
         </div>
       </div>
@@ -201,76 +208,51 @@
     <!-- OBJETIVOS -->
     <section id="objetivos" class="section">
       <div class="container">
-        <h2>Objetivos</h2>
+        <h2 class="fade-in-on-scroll">Objetivos</h2>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Fortalecer comprensión conceptual</h3>
-            <p>Ser un medio para que los/as estudiantes desarrollen una comprensión profunda de conceptos en ciencias, matemáticas e idiomas.</p>
-          </article>
+        <article class="content-block fade-in-on-scroll">
+          <h3>General</h3>
+          <p>
+            Fortalecer la comprensión y el pensamiento crítico en estudiantes de diferentes niveles académicos, 
+            a través de clases personalizadas en Física, Química, Matemáticas, Inglés, Ciencias en Inglés, 
+            Análisis y Lógica Matemática, que reconozcan la ciencia y el aprendizaje como herramientas valiosas 
+            para su formación integral y su desarrollo en la sociedad.
+          </p>
+        </article>
 
-          <article class="card">
-            <h3>Elevar la seguridad académica</h3>
-            <p>Contribuir a que los/as estudiantes se sientan seguros y confiados en sus habilidades académicas.</p>
-          </article>
-
-          <article class="card">
-            <h3>Contextualizar el aprendizaje</h3>
-            <p>Conectar los temas académicos con situaciones de la vida cotidiana.</p>
-          </article>
-
-          <article class="card">
-            <h3>Desarrollar pensamiento crítico</h3>
-            <p>Promover la capacidad de analizar, cuestionar y resolver problemas de forma creativa.</p>
-          </article>
-
-          <article class="card">
-            <h3>Mejorar resultados académicos</h3>
-            <p>Acompañar el proceso para lograr los objetivos de calificaciones e índices académicos.</p>
-          </article>
-
-          <article class="card">
-            <h3>Transformar la relación con la ciencia</h3>
-            <p>Cambiar la percepción negativa hacia áreas como matemáticas, ciencias e idiomas.</p>
-          </article>
-        </div>
+        <article class="content-block fade-in-on-scroll">
+          <h3>Específicos</h3>
+          <ul class="methodology-list">
+            <li>Brindar asesorías académicas personalizadas adaptadas a las necesidades e intereses de cada estudiante.</li>
+            <li>Promover el aprendizaje basado en proyectos y problemas para conectar lo académico con la cotidianidad.</li>
+            <li>Fortalecer habilidades de pensamiento crítico, creatividad y resolución de problemas.</li>
+            <li>Preparar estudiantes para exámenes estandarizados con herramientas claras y contextualizadas.</li>
+            <li>Fomentar la seguridad académica y la confianza en el aprendizaje de ciencias e idiomas.</li>
+            <li>Impulsar el aprendizaje STEM+ mediado por tecnologías y experimentación guiada.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!-- SERVICIOS -->
     <section id="servicios" class="section">
       <div class="container">
-        <h2>Servicios</h2>
+        <h2 class="fade-in-on-scroll">Servicios</h2>
 
         <div class="cards-grid">
-          <article class="card">
-            <h3>Clases personalizadas</h3>
-            <p>Diseño de sesiones ajustadas a ritmo, necesidad y nivel del / la estudiante.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Clases Personalizadas</h3>
+            <p>Asesorías individuales en Física, Química, Matemáticas, Inglés y más, adaptadas a tu ritmo y necesidades.</p>
           </article>
 
-          <article class="card">
-            <h3>Apoyo académico</h3>
-            <p>Acompañamiento continuo en procesos de aprendizaje y evaluaciones.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Preparación para Exámenes</h3>
+            <p>Acompañamiento especializado para pruebas estandarizadas (ICFES, Cambridge, etc.)</p>
           </article>
 
-          <article class="card">
-            <h3>Asesorías temáticas</h3>
-            <p>Sesiones específicas en temas puntuales que presenten dificultad.</p>
-          </article>
-
-          <article class="card">
-            <h3>Orientación pedagógica</h3>
-            <p>Estrategias de estudio y técnicas para mejorar el aprendizaje.</p>
-          </article>
-
-          <article class="card">
-            <h3>Preparación para evaluaciones</h3>
-            <p>Capacitación para pruebas estandarizadas, exámenes y evaluaciones.</p>
-          </article>
-
-          <article class="card">
-            <h3>Proyectos educativos</h3>
-            <p>Acompañamiento en desarrollo de proyectos escolares y trabajos académicos.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Proyectos STEM+</h3>
+            <p>Desarrollo de proyectos innovadores que integren ciencia, tecnología, ingeniería y matemáticas.</p>
           </article>
         </div>
       </div>
@@ -279,22 +261,18 @@
     <!-- METODOLOGÍA -->
     <section id="metodologia" class="section">
       <div class="container">
-        <h2>Metodología</h2>
+        <h2 class="fade-in-on-scroll">Metodología</h2>
 
-        <article class="content-block">
-          <h3>¿Cómo enseñamos en EDUCAOS?</h3>
-          <p>
-            Utilizamos un modelo de enseñanza flexible y personalizado que parte del diagnóstico
-            del/ la estudiante, sus necesidades específicas y su ritmo de aprendizaje. Nuestras
-            estrategias incluyen:
-          </p>
+        <article class="content-block fade-in-on-scroll">
+          <h3>Nuestro Enfoque Pedagógico</h3>
           <ul class="methodology-list">
-            <li><strong>Aprendizaje Basado en Problemas (ABP):</strong> Los estudiantes resuelven situaciones reales.</li>
-            <li><strong>Aprendizaje Experiencial:</strong> Utilizamos experimentos y demostraciones prácticas.</li>
-            <li><strong>Enseñanza Socrática:</strong> Hacemos preguntas que estimulen el pensamiento crítico.</li>
-            <li><strong>Andamiaje pedagógico:</strong> Proporcionamos apoyo que varía gradualmente.</li>
-            <li><strong>Integración de tecnología:</strong> Usamos herramientas digitales para enriquecer el aprendizaje.</li>
-            <li><strong>Enfoque STEM+:</strong> Conectamos ciencia, tecnología, ingeniería y matemáticas.</li>
+            <li>Evaluación inicial para identificar fortalezas, dificultades e intereses.</li>
+            <li>Diseño de un plan personalizado con objetivos claros y medibles.</li>
+            <li>Clases dinámicas que integren teoría, práctica y experimentación.</li>
+            <li>Aprendizaje basado en problemas y proyectos contextualizados.</li>
+            <li>Retroalimentación constante y ajuste de estrategias según progreso.</li>
+            <li>Uso de tecnologías educativas para enriquecer el aprendizaje.</li>
+            <li>Acompañamiento cercano y relación alumno-docente basada en el respeto y la confianza.</li>
           </ul>
         </article>
       </div>
@@ -303,42 +281,23 @@
     <!-- PÚBLICO -->
     <section id="publico" class="section">
       <div class="container">
-        <h2>¿A quién va dirigido?</h2>
+        <h2 class="fade-in-on-scroll">¿A quién va dirigido?</h2>
 
         <div class="cards-grid">
-          <article class="card">
-            <h3>Estudiantes de primaria</h3>
-            <p>Desde 2do grado en adelante, consolidando bases en lenguaje, matemáticas y ciencias naturales.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Estudiantes de Primaria</h3>
+            <p>Acompañamiento en Matemáticas, Ciencias Naturales e Inglés para fortalecer bases sólidas.</p>
           </article>
 
-          <article class="card">
-            <h3>Estudiantes de bachillerato</h3>
-            <p>Apoyo en materias regulares y preparación para pruebas estandarizadas como ICFES, exámen UNAL, UDEA.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Estudiantes de Secundaria</h3>
+            <p>Asesorías en Física, Química, Matemáticas, Inglés y preparación para pruebas.</p>
           </article>
 
-          <article class="card">
-            <h3>Estudiantes universitarios</h3>
-            <p>Acompañamiento en primeros semestres en cálculo, biología, química, física, inglés y español para extranjeros.</p>
+          <article class="card fade-in-on-scroll">
+            <h3>Estudiantes Universitarios</h3>
+            <p>Apoyo en cursos iniciales de Cálculo, Física, Química y Análisis Matemático.</p>
           </article>
-
-          <article class="card">
-            <h3>Personas en procesos de ingreso</h3>
-            <p>Preparación para exámenes de admisión y nivelaciones académicas.</p>
-          </article>
-        </div>
-
-        <article class="card">
-            <h3>Estudiantes de idiomas</h3>
-            <p>Preparación para asgnaturas de lenguaje, inglés, español; exámenes de nivelación y certificación.</p>
-          </article>
-        </div>
-
-        <div class="content-block">
-          <h3>Modalidades</h3>
-          <p>
-            Ofrecemos clases virtuales y presenciales, en formatos individuales
-            o grupales, según las necesidades de cada estudiante o familia.
-          </p>
         </div>
       </div>
     </section>
@@ -346,41 +305,41 @@
     <!-- PROGRAMAS -->
     <section id="programas" class="section">
       <div class="container">
-        <h2>Programas y cursos</h2>
+        <h2 class="fade-in-on-scroll">Nuestros Programas</h2>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Refuerzo escolar personalizado</h3>
-            <p>Apoyo continuo por áreas según el nivel y proceso del/ la estudiante.</p>
+        <div class="grid-two">
+          <article class="content-card fade-in-on-scroll">
+            <h3>Física</h3>
+            <p>Mecánica, Termodinámica, Electromagnetismo, Óptica. Clases teóricas y experimentales con contexto real.</p>
           </article>
 
-          <article class="card">
-            <h3>Nivelaciones académicas</h3>
-            <p>Recuperación y fortalecimiento de vacíos conceptuales.</p>
+          <article class="content-card fade-in-on-scroll">
+            <h3>Química</h3>
+            <p>Química General, Inorgánica y Orgánica. Laboratorios virtuales y demostraciones interactivas.</p>
           </article>
 
-          <article class="card">
-            <h3>Preparación para ICFES, exámen UNAL, UDEA.</h3>
-            <p>Orientación estratégica para pruebas estandarizadas.</p>
+          <article class="content-card fade-in-on-scroll">
+            <h3>Matemáticas</h3>
+            <p>Aritmética, Álgebra, Geometría, Cálculo, Estadística. Resolución de problemas y aplicaciones.</p>
           </article>
 
-          <article class="card">
-            <h3>Acompañamiento para ingreso universitario</h3>
-            <p>Apoyo para pruebas y procesos académicos de transición.</p>
+          <article class="content-card fade-in-on-scroll">
+            <h3>Inglés</h3>
+            <p>Gramática, Conversación, Vocabulario, Pronunciación. Preparación para certificaciones internacionales.</p>
           </article>
 
-          <article class="card">
-            <h3>Tutorías por áreas</h3>
-            <p>Sesiones específicas en ciencias naturales y experimentales (biología- derivados, química- derivados y física -derivados), matemáticas e inglés.</p>
+          <article class="content-card fade-in-on-scroll">
+            <h3>Ciencias en Inglés</h3>
+            <p>Integración de ciencias (Física, Química, Biología) con dominio del inglés académico.</p>
           </article>
 
-          <article class="card">
-            <h3>Apoyo en proyectos y trabajos</h3>
-            <p>Acompañamiento guiado para desarrollar procesos académicos con seguridad.</p>
+          <article class="content-card fade-in-on-scroll">
+            <h3>Análisis y Lógica Matemática</h3>
+            <p>Pensamiento lógico, conjuntos, argumentación, análisis matemático avanzado y pruebas formales.</p>
           </article>
         </div>
 
-        <div class="content-block">
+        <div class="content-block fade-in-on-scroll" style="margin-top: 30px;">
           <p>
             Contáctanos para obtener más información detallada del programa de tu gusto:
             modalidad, duración, horario.
@@ -392,24 +351,24 @@
     <!-- EQUIPO DOCENTE -->
     <section id="equipo" class="section">
       <div class="container">
-        <h2>Equipo docente</h2>
+        <h2 class="fade-in-on-scroll">Equipo docente</h2>
 
         <div class="cards-grid">
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <img src="img/teachers1.jpg" alt="Docente de EDUCAOS" />
             <h3>Zoé</h3>
             <p><strong>Área:</strong> Química / Inglés</p>
             <p><strong>Formación:</strong> Licenciada en Química. Bilingüe de British Council.  </p>
           </article>
 
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <img src="img/teachers2.png" alt="Docente de EDUCAOS" />
             <h3>María</h3>
             <p><strong>Área:</strong> Biología / Matemáticas / Inglés</p>
             <p><strong>Formación:</strong> Bióloga. Maestría en Biología. Bilingüe del ILUD. </p>
           </article>
 
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <img src="img/teachers3.jpg" alt="Docente de EDUCAOS" />
             <h3>Ana</h3>
             <p><strong>Área:</strong> Física / Matemáticas / Inglés</p>
@@ -422,9 +381,9 @@
     <!-- EXPERIENCIAS -->
     <section id="experiencias" class="section">
       <div class="container">
-        <h2>Experiencias de nuestros/as estudiantes</h2>
+        <h2 class="fade-in-on-scroll">Experiencias de nuestros/as estudiantes</h2>
 
-        <article class="content-block">
+        <article class="content-block fade-in-on-scroll">
           <p>
             En EDUCAOS valoramos cada proceso de aprendizaje. Más allá de los resultados,
             reconocemos el esfuerzo, la confianza y el crecimiento que cada estudiante
@@ -433,17 +392,17 @@
         </article>
 
         <div class="cards-grid">
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <h3>Daniel</h3>
             <p>"Aquí puedes agregar una frase de estudiante o familia que hable de su experiencia."</p>
           </article>
 
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <h3>Laura</h3>
             <p>"Incluir testimonios reales mejora mucho la credibilidad de tu sitio web."</p>
           </article>
 
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <h3>David</h3>
             <p>"Considera incluir videos cortos de estudiantes hablando sobre sus experiencias."</p>
           </article>
@@ -454,9 +413,9 @@
     <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="container">
-        <h2>Contacto</h2>
+        <h2 class="fade-in-on-scroll">Contacto</h2>
 
-        <article class="content-block">
+        <article class="content-block fade-in-on-scroll">
           <p>
             ¿Quieres agendar una clase, resolver dudas o conocer el acompañamiento
             más adecuado para tu proceso? Escríbenos y con gusto te orientamos.
@@ -464,7 +423,7 @@
         </article>
 
         <div class="contact-grid">
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <h3>Información de contacto</h3>
             <p><strong>WhatsApp:</strong> <a href="https://wa.me/message/WLGV2CBEJZI7O1" target="_blank">Escribenos tu inquietud!</a></p>
             <p><strong>Correo:</strong> <a href="mailto:educaos.edu@gmail.com">educaos.edu@gmail.com</a></p>
@@ -472,7 +431,7 @@
             <p><strong>Horario:</strong> Lunes a viernes, de 9:00 a. m. a 10:00 p. m.</p>
           </article>
 
-          <article class="card">
+          <article class="card fade-in-on-scroll">
             <h3>Formulario de contacto</h3>
             <form id="contactForm" onsubmit="handleSubmit(event)">
               <label for="nombre">Nombre</label>
@@ -494,31 +453,12 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA --> 
+  <!-- PIE DE PÁGINA -->
   <footer class="footer">
     <div class="container">
       <p><strong>EDUCAOS</strong> | Educación por y para todxs.</p>
 
       <div class="social-links">
-        <!-- OPCIÓN 1: EMOJIS/SÍMBOLOS (RECOMENDADO - SIEMPRE FUNCIONA) 
-        <a href="https://www.facebook.com/Educaos.educacion" target="_blank" aria-label="Facebook" class="social-btn">
-          f
-        </a>
-
-        <a href="https://www.instagram.com/educaos_" target="_blank" aria-label="Instagram" class="social-btn">
-          📷
-        </a>
-
-        <a href="https://www.tiktok.com/@educaos.edu" target="_blank" aria-label="TikTok" class="social-btn">
-          ♪
-        </a>
-
-        <a href="https://wa.me/message/WLGV2CBEJZI7O1" target="_blank" aria-label="WhatsApp" class="social-btn">
-          💬
-        </a>
-        -->
-
-        <!-- OPCIÓN 2: SI PREFIERES USAR IMÁGENES, DESCOMENTA ESTO Y COMENTA OPCIÓN 1-->
         <a href="https://www.facebook.com/Educaos.educacion" target="_blank" aria-label="Facebook">
           <img src="img/facebook.png" alt="Facebook" class="social-icon">
         </a>
@@ -534,7 +474,6 @@
         <a href="https://wa.me/message/WLGV2CBEJZI7O1" target="_blank" aria-label="WhatsApp">
           <img src="img/whatsapp.png" alt="WhatsApp" class="social-icon">
         </a>
-        
       </div>
 
       <p>Correo: <a href="mailto:educaos.edu@gmail.com">educaos.edu@gmail.com</a></p>
@@ -542,27 +481,93 @@
   </footer>
 
   <!-- BOTÓN WHATSAPP FLOTANTE -->
-  <a href="https://wa.me/message/WLGV2CBEJZI7O1" class="whatsapp-btn" target="_blank" title="Chatear con EDUCAOS por WhatsApp">
+  <a href="https://wa.me/message/WLGV2CBEJZI7O1" class="whatsapp-btn" target="_blank" title="Chatear con EDUCAOS por WhatsApp" aria-label="Contacto por WhatsApp">
     💬
   </a>
 
-  <!-- Script para menú y formulario -->
+  <!-- SCRIPTS -->
   <script>
-    // MENÚ HAMBURGUESA
-    document.getElementById('menuToggle').addEventListener('click', function() {
-      this.classList.toggle('active');
-      document.getElementById('navList').classList.toggle('active');
-    });
+    // ============================================
+    // MENÚ HAMBURGUESA - FUNCIONA CORRECTAMENTE
+    // ============================================
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.getElementById('hamburger');
+      const nav = document.getElementById('nav');
+      const navLinks = nav.querySelectorAll('a');
 
-    // Cerrar menú al hacer clic en un enlace
-    document.querySelectorAll('.nav-list li a').forEach(link => {
-      link.addEventListener('click', function() {
-        document.getElementById('menuToggle').classList.remove('active');
-        document.getElementById('navList').classList.remove('active');
+      // Abrir/cerrar menú al hacer clic en hamburguesa
+      hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+
+      // Cerrar menú al hacer clic en un enlace
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        });
+      });
+
+      // Cerrar menú si se hace clic fuera de él
+      document.addEventListener('click', function(event) {
+        const isClickInsideNav = nav.contains(event.target);
+        const isClickOnHamburger = hamburger.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnHamburger && nav.classList.contains('active')) {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        }
       });
     });
 
-    // FUNCIÓN DEL FORMULARIO
+    // ============================================
+    // ANIMACIÓN FADE-IN AL HACER SCROLL
+    // ============================================
+    function observeElements() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      // Observar todos los elementos con fade-in-on-scroll
+      document.querySelectorAll('.fade-in-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    }
+
+    // Ejecutar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', observeElements);
+    } else {
+      observeElements();
+    }
+
+    // ============================================
+    // EFECTO PARALLAX
+    // ============================================
+    window.addEventListener('scroll', function() {
+      const parallaxElements = document.querySelectorAll('[data-parallax]');
+      parallaxElements.forEach(element => {
+        const scrollPosition = window.pageYOffset;
+        const parallaxBg = element.querySelector('.parallax-bg');
+        if (parallaxBg) {
+          parallaxBg.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+        }
+      });
+    });
+
+    // ============================================
+    // FUNCIÓN FORMULARIO
+    // ============================================
     function handleSubmit(e) {
       e.preventDefault();
       
