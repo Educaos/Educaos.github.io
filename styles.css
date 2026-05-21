@@ -202,7 +202,7 @@ a:hover {
   display: flex;
   list-style: none;
   gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
 }
@@ -427,7 +427,7 @@ a:hover {
   display: flex;
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .hero-image {
@@ -743,7 +743,7 @@ form button:hover {
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .social-icon {
