@@ -201,8 +201,7 @@ a:hover {
 .nav-list {
   display: flex;
   list-style: none;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: flex-end;
   align-items: center;
 }
@@ -212,6 +211,7 @@ a:hover {
   font-weight: 500;
   transition: var(--transition);
   padding: 0.5rem 0;
+  font-size: 14px;
 }
 
 .nav-list li a:hover {
