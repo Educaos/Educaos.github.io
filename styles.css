@@ -369,7 +369,7 @@ a:hover {
 }
 
 /* ===================================
-   SECCIÓN HERO CON PARALLAX
+   SECCIÓN HERO CON PARALLAX para inicio
    =================================== */
 
 .hero {
@@ -473,9 +473,37 @@ a:hover {
    SECCIONES PRINCIPALES
    =================================== */
 
+/* Estilo base para todas las secciones */
 .section {
   padding: var(--spacing-2xl) 0;
   border-bottom: 1px solid var(--color-border);
+  position: relative;  ← AGREGA ESTO
+  overflow: hidden;     ← AGREGA ESTO
+}
+
+/* Ahora agrega estos estilos PARA CADA SECCIÓN */
+
+/* SECCIÓN NOSOTROS */
+#nosotros {
+  background-color: #f0f9ff;
+}
+
+#nosotros .parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.3);
+  z-index: -1;
+}
+
+#nosotros .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section:last-of-type {
