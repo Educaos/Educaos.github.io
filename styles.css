@@ -382,7 +382,7 @@ a:hover {
   align-items: center;
 }
 
-.parallax-bg {
+ .hero .parallax-bg {   ← ESTO APLICA SOLO PARA HERO
   position: absolute;
   top: 0;
   left: 0;
