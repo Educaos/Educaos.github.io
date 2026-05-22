@@ -538,19 +538,21 @@ a:hover {
 }
 
 .methodology-list li {
-  padding: var(--spacing-sm) 0;
+  padding: 10px 0;
+  padding-left: 35px;
   position: relative;
   color: var(--color-gray);
-  margin-left: var(--spacing-lg);
+  line-height: 1.6;
 }
 
 .methodology-list li:before {
   content: "✓";
   position: absolute;
-  left: -var(--spacing-lg);
+  left: 0;
+  top: 8px;  ← AGREGA ESTO para alinear verticalmente
   color: var(--color-accent);
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 18px;
 }
 
 /* ===================================
