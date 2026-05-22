@@ -211,7 +211,7 @@ a:hover {
   font-weight: 500;
   transition: var(--transition);
   padding: 0.5rem 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .nav-list li a:hover {
