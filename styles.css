@@ -539,7 +539,7 @@ a:hover {
 
 .methodology-list li {
   padding: 10px 0;
-  padding-left: 29px;
+  padding-left: 35px;
   position: relative;
   color: var(--color-gray);
   line-height: 1.6;
@@ -549,10 +549,10 @@ a:hover {
   content: "✓";
   position: absolute;
   left: 0;
-  top: 8px;  ← AGREGA ESTO para alinear verticalmente
+  top: 50%; /* centra verticalmente */
   color: var(--color-accent);
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 /* ===================================
