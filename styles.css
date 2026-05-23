@@ -514,9 +514,9 @@ a:hover {
 .content-block {
   margin-bottom: var(--spacing-xl);
   padding: var(--spacing-lg);
-  background-color: var(--color-light);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f7ff 100%);  /* Degradado azul */
   border-radius: var(--border-radius);
-  border-left: 4px solid var(--color-secondary);
+  border-left: 4px solid #3b82f6;
 }
 
 .content-block h3 {
@@ -784,8 +784,7 @@ form button:hover {
 }
 
 .social-icon:hover {
-  transform: scale(1.2) drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
-  opacity: 0.9;
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
