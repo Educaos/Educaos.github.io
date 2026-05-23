@@ -773,8 +773,9 @@ form button:hover {
 .social-links {
   display: flex;
   justify-content: center;
-  align-items: center;  /* centra iconos verticalmente */
-  gap: 20px;            /* espacio uniforme entre ellos */
+  align-items: center;  /* centra verticalmente los iconos */
+  gap: 20px;            /* espacio uniforme entre iconos */
+  flex-wrap: wrap;      /* en móvil se ajusta */
 }
 
 .social-icon {
