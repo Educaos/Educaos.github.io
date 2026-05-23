@@ -779,10 +779,11 @@ form button:hover {
 }
 
 .social-icon {
-  width: 40px;     /* ancho uniforme */
-  height: auto;    /* mantiene proporción */
-  max-height: 40px; /* asegura que no exceda 40px de alto */
-  display: block;   /* elimina espacios extra */
+  width: 40px;        /* ancho uniforme */
+  height: auto;       /* mantiene proporción original */
+  max-height: 40px;   /* limita altura máxima */
+  display: block;     /* elimina espacios extra alrededor */
+  background: transparent; /* asegura fondo transparente */
   transition: transform 0.3s ease;
 }
 
