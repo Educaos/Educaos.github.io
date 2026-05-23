@@ -773,14 +773,16 @@ form button:hover {
 .social-links {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-lg);
-  flex-wrap: wrap;
+  align-items: center;  /* centra iconos verticalmente */
+  gap: 20px;            /* espacio uniforme entre ellos */
 }
 
 .social-icon {
-  width: 50px;
-  height: 50px;
-  transition: var(--transition);
+  width: 40px;     /* ancho uniforme */
+  height: auto;    /* mantiene proporción */
+  max-height: 40px; /* asegura que no exceda 40px de alto */
+  display: block;   /* elimina espacios extra */
+  transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
