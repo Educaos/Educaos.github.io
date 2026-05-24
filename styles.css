@@ -92,52 +92,6 @@ h2 {
   margin-bottom: var(--spacing-xl);
 }
 
-/* Contenedor de título con imagen de fondo */
-.section-header-bg {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;  /* ← Parallax */
-  padding: 4rem 2rem;
-  margin: 0 -2rem 2rem -2rem;  /* Expande hasta los bordes */
-  overflow: hidden;
-}
-
-/* Oscurece la imagen */
-.section-header-bg::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);  /* Oscuridad 40% */
-  z-index: 1;
-}
-
-/* H2 encima de la imagen */
-.section-header-bg h2 {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;  /* Texto blanco */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin: 0;
-  text-align: center;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .section-header-bg {
-    padding: 2rem 1rem;
-    margin: 0 -1rem 2rem -1rem;
-    background-attachment: scroll;  /* En mobile, sin parallax */
-  }
-  
-  .section-header-bg h2 {
-    font-size: 1.8rem;
-  }
-}
-
 h3 {
   font-size: var(--font-size-xl);
 }
@@ -516,6 +470,63 @@ a:hover {
   }
 }
 
+LÍNEA 471:  }  ← Final del @media del HERO
+
+/* Banner del título con parallax */
+.section-banner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 6rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Oscurece */
+.section-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.6), rgba(59, 130, 246, 0.6));
+  z-index: 1;
+}
+
+/* Contenido encima */
+.section-banner h2 {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.section-banner p {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .section-banner {
+    padding: 3rem 1rem;
+    background-attachment: scroll;
+  }
+  
+  .section-banner h2 {
+    font-size: 1.8rem;
+  }
+}
 /* ===================================
    SECCIONES PRINCIPALES
    =================================== */
@@ -557,129 +568,6 @@ a:hover {
   border-bottom: none;
 }
 
-/* ===================================
-   ACCORDION (Desplegable)
-   =================================== */
-
-.accordion-item {
-  margin-bottom: 1.5rem;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.accordion-item:hover {
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
-  border-color: #3b82f6;
-}
-
-/* HEADER CLICKEABLE */
-.accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: #f0f9ff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.accordion-header:hover {
-  background-color: #e0f7ff;
-}
-
-.accordion-header h3 {
-  margin: 0;
-  color: #1e3a8a;
-  font-size: 1.2rem;
-}
-
-/* ÍCONO DEL ACCORDION */
-.accordion-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-  color: #3b82f6;
-}
-
-/* CONTENIDO ESCONDIDO */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-}
-
-/* CUANDO ESTÁ ABIERTO */
-.accordion-item.active .accordion-content {
-  max-height: 600px;  /* Ajusta según necesites */
-}
-
-.accordion-item.active .accordion-icon {
-  transform: rotate(180deg);
-}
-
-/* CUERPO DEL ACCORDION */
-.accordion-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;  /* 2 columnas: texto + imagen */
-  gap: 2rem;
-  padding: 2rem;
-  align-items: center;
-}
-
-.accordion-text {
-  flex: 1;
-}
-
-.accordion-text p {
-  margin-bottom: 1rem;
-  color: #666;
-  line-height: 1.7;
-}
-
-.accordion-text p:last-child {
-  margin-bottom: 0;
-}
-
-/* IMAGEN CON PARALLAX */
-.accordion-image {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  height: 300px;
-}
-
-.parallax-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.accordion-item:hover .parallax-image {
-  transform: scale(1.05);
-}
-
-/* RESPONSIVE - MOBILE */
-@media (max-width: 768px) {
-  .accordion-body {
-    grid-template-columns: 1fr;  /* Solo una columna en mobile */
-    gap: 1rem;
-  }
-
-  .accordion-header {
-    padding: 1rem;
-  }
-
-  .accordion-header h3 {
-    font-size: 1rem;
-  }
-
-  .accordion-image {
-    height: 200px;
-  }
-}
 .content-block {
   margin-bottom: var(--spacing-xl);
   padding: var(--spacing-lg);
@@ -948,11 +836,10 @@ form button:hover {
 }
 
 .social-icon {
-  width: 40px;        /* ancho uniforme */
-  height: auto;       /* mantiene proporción original */
-  max-height: 40px;   /* limita altura máxima */
-  display: block;     /* elimina espacios extra alrededor */
-  background: transparent; /* asegura fondo transparente */
+  width: 40px;     /* ancho uniforme */
+  height: auto;    /* mantiene proporción */
+  max-height: 40px; /* asegura que no exceda 40px de alto */
+  display: block;   /* elimina espacios extra */
   transition: transform 0.3s ease;
 }
 
