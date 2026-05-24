@@ -468,9 +468,7 @@ a:hover {
   .parallax-bg {
     background-attachment: scroll;
   }
-}
-
-LÍNEA 471:  }  ← Final del @media del HERO
+}  
 
 /* Banner del título con parallax */
 .section-banner {
@@ -535,8 +533,8 @@ LÍNEA 471:  }  ← Final del @media del HERO
 .section {
   padding: var(--spacing-2xl) 0;
   border-bottom: 1px solid var(--color-border);
-  position: relative;  ← AGREGA ESTO
-  overflow: hidden;     ← AGREGA ESTO
+  position: relative;
+  overflow: hidden;
 }
 
 /* Ahora agrega estos estilos PARA CADA SECCIÓN */
@@ -845,6 +843,7 @@ form button:hover {
 
 .social-icon:hover {
   transform: scale(1.2);
+  filter: brightness(0) invert(1);  /* Se vuelven blancos al pasar */
 }
 
 @media (max-width: 768px) {
@@ -981,7 +980,7 @@ form button:hover {
 
   h1 {
     font-size: var(--font-size-xl);
-  }
+  }t
 
   h2 {
     font-size: var(--font-size-lg);
@@ -998,5 +997,215 @@ form button:hover {
 
   .grid-two {
     grid-template-columns: 1fr;
+  }
+}
+/* ===================================
+   ACCORDION / DESPLEGABLE SOBRE NOSOTROS
+   =================================== */
+
+.accordion-item {
+  background: #ffffff;
+  border-radius: 18px;
+  margin-bottom: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.08);
+  border: 1px solid var(--color-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(30, 58, 138, 0.15);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+}
+
+.accordion-header h3 {
+  margin: 0;
+  color: var(--color-primary);
+}
+
+.accordion-icon {
+  font-size: 18px;
+  color: var(--color-secondary);
+  transition: transform 0.3s ease;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.accordion-item:hover .accordion-content,
+.accordion-item.active .accordion-content {
+  max-height: 900px;
+}
+
+.accordion-item:hover .accordion-icon,
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 28px;
+  padding: 0 28px 28px;
+  align-items: center;
+}
+
+.accordion-text p {
+  color: var(--color-gray);
+  line-height: 1.7;
+}
+
+.accordion-image {
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.accordion-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 0.8s ease;
+}
+
+.accordion-item:hover .accordion-image img,
+.accordion-item.active .accordion-image img {
+  transform: scale(1.16) translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .accordion-body {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion-content {
+    max-height: none;
+  }
+
+  .accordion-image {
+    height: 220px;
+  }
+}
+/* ===================================
+   MISIÓN Y VISIÓN - TARJETAS DESPLEGABLES
+   =================================== */
+
+/* GRID LADO A LADO */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* TARJETA */
+.mv-card {
+  background-color: #f0f9ff;
+  border: 2px solid #0ea5e9;
+  border-left: 4px solid #0284c7;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.mv-card:hover {
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.15);
+  border-color: #0284c7;
+  transform: translateY(-3px);
+}
+
+/* ENCABEZADO DE CADA TARJETA */
+.mv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #e0f7ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mv-header:hover {
+  background-color: #cff0ff;
+}
+
+.mv-header h3 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 1.3rem;
+}
+
+/* ÍCONO DE FLECHA */
+.mv-icon {
+  font-size: 1rem;
+  color: #0284c7;
+  transition: transform 0.3s ease;
+}
+
+.mv-card.active .mv-icon {
+  transform: rotate(180deg);
+}
+
+/* CONTENIDO OCULTO */
+.mv-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
+  transition: max-height 0.5s ease, padding 0.4s ease;
+}
+
+/* CONTENIDO ABIERTO */
+.mv-card.active .mv-content {
+  max-height: 900px;
+  padding: 1.5rem;
+}
+
+.mv-content p {
+  margin: 1rem 0;
+  color: #4b5563;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.mv-content p:first-child {
+  margin-top: 0;
+}
+
+.mv-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* RESPONSIVE - CELULAR */
+@media (max-width: 768px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .mv-header {
+    padding: 1rem;
+  }
+
+  .mv-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .mv-card.active .mv-content {
+    max-height: 1000px;
+    padding: 1rem;
   }
 }
