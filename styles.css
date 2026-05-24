@@ -511,6 +511,129 @@ a:hover {
   border-bottom: none;
 }
 
+/* ===================================
+   ACCORDION (Desplegable)
+   =================================== */
+
+.accordion-item {
+  margin-bottom: 1.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+  border-color: #3b82f6;
+}
+
+/* HEADER CLICKEABLE */
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #f0f9ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: #e0f7ff;
+}
+
+.accordion-header h3 {
+  margin: 0;
+  color: #1e3a8a;
+  font-size: 1.2rem;
+}
+
+/* ÍCONO DEL ACCORDION */
+.accordion-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  color: #3b82f6;
+}
+
+/* CONTENIDO ESCONDIDO */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+/* CUANDO ESTÁ ABIERTO */
+.accordion-item.active .accordion-content {
+  max-height: 600px;  /* Ajusta según necesites */
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* CUERPO DEL ACCORDION */
+.accordion-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 columnas: texto + imagen */
+  gap: 2rem;
+  padding: 2rem;
+  align-items: center;
+}
+
+.accordion-text {
+  flex: 1;
+}
+
+.accordion-text p {
+  margin-bottom: 1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.accordion-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* IMAGEN CON PARALLAX */
+.accordion-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 300px;
+}
+
+.parallax-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.accordion-item:hover .parallax-image {
+  transform: scale(1.05);
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+  .accordion-body {
+    grid-template-columns: 1fr;  /* Solo una columna en mobile */
+    gap: 1rem;
+  }
+
+  .accordion-header {
+    padding: 1rem;
+  }
+
+  .accordion-header h3 {
+    font-size: 1rem;
+  }
+
+  .accordion-image {
+    height: 200px;
+  }
+}
 .content-block {
   margin-bottom: var(--spacing-xl);
   padding: var(--spacing-lg);

@@ -644,6 +644,27 @@
       // Limpiar formulario
       document.getElementById('contactForm').reset();
     }
+    // ============================================
+// ACCORDION - ABRIR/CERRAR AL HACER CLIC
+// ============================================
+
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+accordionHeaders.forEach(header => {
+  header.addEventListener('click', function() {
+    const item = this.closest('.accordion-item');
+    
+    // Cierra todos los otros
+    document.querySelectorAll('.accordion-item').forEach(el => {
+      if (el !== item) {
+        el.classList.remove('active');
+      }
+    });
+    
+    // Abre/cierra el actual
+    item.classList.toggle('active');
+  });
+});
   </script>
 
 </body>
